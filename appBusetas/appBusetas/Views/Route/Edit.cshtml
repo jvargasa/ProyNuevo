@@ -1,0 +1,77 @@
+﻿@model Buseta_DataAccess.Route
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Route</legend>
+
+        @Html.HiddenFor(model => model.id)
+
+        <div class="">
+            <label>Bus: </label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("busId", String.Empty)
+            @Html.ValidationMessageFor(model => model.busId)
+        </div>
+
+        <div class="editor-label">
+            <label>Route Schedule: </label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("routeScheduleId", String.Empty)
+            @Html.ValidationMessageFor(model => model.routeScheduleId)
+        </div>
+
+        <div class="">
+            <label>Going to School: </label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.goingToSchool)
+            @Html.ValidationMessageFor(model => model.goingToSchool)
+        </div>
+
+        <div class="">
+           <label>Going to Home: </label>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.goingToHome)
+            @Html.ValidationMessageFor(model => model.goingToHome)
+        </div>
+
+        <div class="">
+            <label>Pilot: </label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("pilotId", String.Empty)
+            @Html.ValidationMessageFor(model => model.pilotId)
+        </div>
+
+        <div class="">
+            <label>Employee: </label>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("copilotId", String.Empty)
+            @Html.ValidationMessageFor(model => model.copilotId)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

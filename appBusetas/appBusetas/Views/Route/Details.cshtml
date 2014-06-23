@@ -1,0 +1,57 @@
+﻿@model Buseta_DataAccess.Route
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Route</legend>
+
+    <div class="">
+         <label>Bus: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bus.brand)
+    </div>
+
+    <div class="">
+         <label>Route Schedule: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.RouteSchedule.dayOfTheWeek)
+    </div>
+
+    <div class="">
+         <label>Going to School: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goingToSchool)
+    </div>
+
+    <div class="">
+         <label>Going to Home: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.goingToHome)
+    </div>
+
+    <div class="">
+         <label>Pilot: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee1.name)
+    </div>
+
+    <div class="">
+        <label>Employee: </label>
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Employee.name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

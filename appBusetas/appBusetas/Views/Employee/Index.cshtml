@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Buseta_DataAccess.Employee>
+
+@{
+    ViewBag.Title = "Maintenance Employee";
+}
+<body id="BEmployee">
+<h2>Maintenance Employee</h2>
+
+
+<table class="table table-striped">
+    <tr>
+        <th>
+           <label>Name </label>
+        </th>
+        <th>
+            <label>LastName </label>
+        </th>
+        <th>
+            <label>Email </label>
+        </th>
+        <th>
+            <label>Telephone </label>
+        </th>
+        <th>
+           <label>Employee Type </label>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lastname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telephone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmployeeType.name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+ <button id="BtEmployee" type="button" class="btn btn-default">
+    @Html.ActionLink("Create New", "Create")
+</button>
+</body>
